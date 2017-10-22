@@ -28,7 +28,6 @@ func altMethod(maxDivisible int) int {
 		if answer < currentDivisible {
 			answer *= currentDivisible
 		} else if answer%currentDivisible != 0 {
-			// answer *= (answer % currentDivisible)
 			answer *= currentDivisible
 			fmt.Println(answer)
 		}
