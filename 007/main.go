@@ -1,64 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-func isPrime(n int) bool {
-	/*
-			    if n == 2:
-		        return True
-		    if n == 3:
-		        return True
-		    if n % 2 == 0:
-		        return False
-		    if n % 3 == 0:
-		        return False
-
-		    i = 5
-		    w = 2
-
-		    while i * i <= n:
-		        if n % i == 0:
-		            return False
-
-		        i += w
-		        w = 6 - w
-
-		    return True
-	*/
-	if n == 2 {
-		return true
-	}
-
-	if n == 3 {
-		return true
-	}
-
-	if n%2 == 0 {
-		return false
-	}
-
-	if n%3 == 0 {
-		return false
-	}
-
-	i, w := 5, 2
-	for i*i <= n {
-		if n%i == 0 {
-			return false
-		}
-
-		i += w
-		w = 6 - w
-	}
-	return true
-}
+	"github.com/thales17/go-projecteuler/math"
+)
 
 func findNPrime(n int) int {
 	primeCount := 0
 	i := 0
 	for primeCount <= n {
 		i++
-		if isPrime(i) {
+		if math.IsPrime(i) {
 			fmt.Printf("Prime: %d\n", i)
 			primeCount++
 		}
